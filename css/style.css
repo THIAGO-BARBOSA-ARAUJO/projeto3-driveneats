@@ -13,6 +13,9 @@
         height: 92px;
         background: #CF2B2B;
         padding-left: 21px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        position: fixed;
     }
 
     header h1 {
@@ -33,5 +36,123 @@
         font-size: 18px;
         line-height: 21px;
         color: white;
+    }
+
+    main {
+        background: #E5E5E5;
+        padding-left: 19px;
+        padding-bottom: 16px;
+        margin-bottom: 100px;
+    }
+
+    section.sessao-comida {
+        padding-top: 123px;
+    }
+
+    .container-sessao-comida {
+        display: flex;
+        overflow-x: scroll;
+    }
+
+    .titulo h2 {
+        font-family: 'Righteous';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 32px;
+        letter-spacing: 0.018em;
+        margin-bottom: 17px;
+        color: #333333;
+    }
+
+    .caixa-escolha {
+        width: 172px;
+        height: 216px;
+        background-color: white;
+        padding-top: 18px;
+        padding-left: 14px;
+        padding-right: 14px;
+        margin-right: 16px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+        border-radius: 9px;
+    }
+
+    .caixa-escolha h3 {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #333333;
+        margin-bottom: 10px;
+        margin-top: 8px;
+    }
+
+    .caixa-escolha p:first-of-type {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 18px;
+        color: #A6A6A6;
+        margin-bottom: 5px;
+    }
+
+    .caixa-escolha p:last-of-type {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: black;
+    }
+
+    section.sessao-bebida {
+        padding-top: 27px;
+    }
+
+    .p2-coquinha {
+       padding-bottom: 8px;
+    }
+
+    .sessao-bebida .caixa-escolha:nth-child(1) {
+        height: 202px;
+    }
+
+    .sessao-bebida .caixa-escolha:nth-child(2) {
+        height: 202px;
+    }
+
+    .sessao-bebida .caixa-escolha:nth-child(3) {
+        height: 202px;
+    }
+
+    footer {
+        padding: 16px 25px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background-color: white;
+        width: 100%;
+    }
+
+    footer button {
+        width: 364px;
+        height: 61px;
+        background: #CBCBCB;
+        border-radius: 50px;
+
+
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        text-align: center;
+        letter-spacing: 0.020em;
+        color: #FFFFFF;
+        border: none;
+        padding: 0 70px;
     }
 }
