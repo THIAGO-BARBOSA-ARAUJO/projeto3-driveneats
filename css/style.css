@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 614px) {
+    header {
+        height: 92px;
+        background: #CF2B2B;
+        padding-left: 21px;
+    }
+
+    header h1 {
+        font-family: 'Righteous';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 44px;
+        line-height: 55px;
+        letter-spacing: -0.012em;
+        color: white;
+        
+    }
+
+    header p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        color: white;
+    }
+}
