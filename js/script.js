@@ -31,9 +31,9 @@ let bebida3 = document.getElementById("bebida3");
 
 /**************************************************************************************************/
 
-let sobre_mesa1 = document.getElementById("sobre-mesa1");
-let sobre_mesa2 = document.getElementById("sobre-mesa2");
-let sobre_mesa3 = document.getElementById("sobre-mesa3");
+let sobre_mesa1 = document.getElementById("sobre_mesa1");
+let sobre_mesa2 = document.getElementById("sobre_mesa2");
+let sobre_mesa3 = document.getElementById("sobre_mesa3");
 
 /**************************************************************************************************/
 function muda_borda_prato1() {
@@ -47,7 +47,7 @@ function muda_borda_prato1() {
     valor_prato1 = Number(valor_prato1.replace(",", "."))
     valor_prato2 = 0
     valor_prato3 = 0
-    prato = document.querySelector("#valor_prato1")
+    prato = document.querySelector("#prato1")
     console.log("prato1: " + valor_prato1)
     console.log("prato2: " + valor_prato2)
     console.log("prato3: " + valor_prato3)
@@ -66,7 +66,7 @@ function muda_borda_prato2() {
     valor_prato2 = document.querySelector("#valor_prato2").innerText
     valor_prato2 = Number(valor_prato2.replace(",", "."))
     valor_prato3 = 0
-    prato = document.querySelector("#valor_prato2")
+    prato = document.querySelector("#prato2")
     console.log("prato1: " + valor_prato1)
     console.log("prato2: " + valor_prato2)
     console.log("prato3: " + valor_prato3)
@@ -85,7 +85,7 @@ function muda_borda_prato3() {
     valor_prato2 = 0
     valor_prato3 = document.querySelector("#valor_prato3").innerText
     valor_prato3 = Number(valor_prato3.replace(",", "."))
-    prato = document.querySelector("#valor_prato3")
+    prato = document.querySelector("#prato3")
     console.log("prato1: " + valor_prato1)
     console.log("prato2: " + valor_prato2)
     console.log("prato3: " + valor_prato3)
@@ -107,7 +107,7 @@ function muda_borda_bebida1() {
     valor_bebida1 = Number(valor_bebida1.replace(",", "."))
     valor_bebida2 = 0
     valor_bebida3 = 0
-    bebida = document.querySelector("#valor_bebida1")
+    bebida = document.querySelector("#bebida1")
     console.log("bebida1: " + valor_bebida1)
     console.log("bebida2: " + valor_bebida2)
     console.log("bebida3: " + valor_bebida3)
@@ -126,7 +126,7 @@ function muda_borda_bebida2() {
     valor_bebida2 = document.querySelector("#valor_bebida2").innerText
     valor_bebida2 = Number(valor_bebida2.replace(",", "."))
     valor_bebida3 = 0
-    bebida = document.querySelector("#valor_bebida2")
+    bebida = document.querySelector("#bebida2")
     console.log("bebida1: " + valor_bebida1)
     console.log("bebida2: " + valor_bebida2)
     console.log("bebida3: " + valor_bebida3)
@@ -145,7 +145,7 @@ function muda_borda_bebida3() {
     valor_bebida2 = 0
     valor_bebida3 = document.querySelector("#valor_bebida3").innerText
     valor_bebida3 = Number(valor_bebida3.replace(",", "."))
-    bebida = document.querySelector("#valor_bebida3")
+    bebida = document.querySelector("#bebida3")
     console.log("bebida1: " + valor_bebida1)
     console.log("bebida2: " + valor_bebida2)
     console.log("bebida3: " + valor_bebida3)
@@ -166,7 +166,7 @@ function muda_borda_sobre_mesa1() {
     valor_sobre_mesa1 = Number(valor_sobre_mesa1.replace(",", "."))
     valor_sobre_mesa2 = 0
     valor_sobre_mesa3 = 0
-    sobre_mesa = document.querySelector("#valor_sobre_mesa1")
+    sobre_mesa = document.querySelector("#sobre_mesa1")
     console.log("sobre_mesa1: " + valor_sobre_mesa1)
     console.log("sobre_mesa2: " + valor_sobre_mesa2)
     console.log("sobre_mesa3: " + valor_sobre_mesa3)
@@ -185,7 +185,7 @@ function muda_borda_sobre_mesa2() {
     valor_sobre_mesa2 = document.querySelector("#valor_sobre_mesa2").innerText
     valor_sobre_mesa2 = Number(valor_sobre_mesa2.replace(",", "."))
     valor_sobre_mesa3 = 0
-    sobre_mesa = document.querySelector("#valor_sobre_mesa2")
+    sobre_mesa = document.querySelector("#sobre_mesa2")
     console.log("sobre_mesa1: " + valor_sobre_mesa1)
     console.log("sobre_mesa2: " + valor_sobre_mesa2)
     console.log("sobre_mesa3: " + valor_sobre_mesa3)
@@ -204,7 +204,7 @@ function muda_borda_sobre_mesa3() {
     valor_sobre_mesa2 = 0
     valor_sobre_mesa3 = document.querySelector("#valor_sobre_mesa3").innerText
     valor_sobre_mesa3 = Number(valor_sobre_mesa3.replace(",", "."))
-    sobre_mesa = document.querySelector("#valor_sobre_mesa3")
+    sobre_mesa = document.querySelector("#sobre_mesa3")
     console.log("sobre_mesa1: " + valor_sobre_mesa1)
     console.log("sobre_mesa2: " + valor_sobre_mesa2)
     console.log("sobre_mesa3: " + valor_sobre_mesa3)
@@ -213,9 +213,32 @@ function muda_borda_sobre_mesa3() {
 }
 
 function ativar() {
-     if( prato != null && bebida != null && sobre_mesa != null) {
+     if( prato !== undefined && bebida !== undefined && sobre_mesa !== undefined) {
         document.querySelector(".btn1").style.display = "none"
         document.querySelector(".btn2").style.display = "block"
      }
+}
+
+function calcular() {
+    let valor_total = valor_prato1 + valor_prato2 + valor_prato3 + valor_bebida1 + valor_bebida2 + valor_bebida3 + valor_sobre_mesa1 + valor_sobre_mesa2 + valor_sobre_mesa3
+    valor_total = valor_total.toFixed(2)
+    
+    let nome_prato = prato.querySelector("h3").innerText
+    
+    let nome_bebida = bebida.querySelector("h3").innerText
+    
+    let nome_sobre_mesa = sobre_mesa.querySelector("h3").innerText
+    
+    let tela_confirma = document.querySelector(".confirmar-pedido")
+    tela_confirma.classList.remove("esconder")
+    msg = `
+Olá, gostaria de fazer o pedido:
+- Prato: ${nome_prato}
+- Bebida: ${nome_bebida}
+- Sobremesa: ${nome_sobre_mesa}
+Total: R$ ${valor_total}`
+
+    /*msg_encodada = encodeURIComponent(msg)
+    window.open(`https://wa.me/5521966339665?text=${msg_encodada}`)*/
 }
 

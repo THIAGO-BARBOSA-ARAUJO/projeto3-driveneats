@@ -37,14 +37,14 @@
     
                 <div class="caixa-escolha" id="prato2" onclick="muda_borda_prato2()">
                     <img src="img/frango_yin_yang 1.svg">
-                    <h3>Frango Yin Yang</h3>
+                    <h3>lalalalal</h3>
                     <p>Um pouco de batata, um pouco de salada</p>
                     <p>R$ <span id="valor_prato2">15,90</span> <img class="checked" id="checked2" src="img/Vector.svg"></p>
                 </div><!--caixa-escolha-->
 
                 <div class="caixa-escolha" id="prato3" onclick="muda_borda_prato3()">
                     <img src="img/frango_yin_yang 1.svg">
-                    <h3>Frango Yin Yang</h3>
+                    <h3>llelelelele</h3>
                     <p>Um pouco de batata, um pouco de salada</p>
                     <p>R$ <span id="valor_prato3">12,90</span> <img class="checked" id="checked3" src="img/Vector.svg"></p>
                 </div><!--caixa-escolha-->
@@ -71,14 +71,14 @@
 
             <div class="caixa-escolha" id="bebida2" onclick="muda_borda_bebida2()">
                 <img src="img/coquinha_gelada 1.svg">
-                <h3>Coquinha gelada</h3>
+                <h3>Coquinha gelada2</h3>
                 <p class="p2-coquinha">Lata 350ml</p>
                 <p>R$ <span id="valor_bebida2">2,90</span> <img class="checked" id="checked5" src="img/Vector.svg"></p>
             </div><!--caixa-escolha-->
 
             <div class="caixa-escolha" id="bebida3" onclick="muda_borda_bebida3()">
                 <img src="img/coquinha_gelada 1.svg">
-                <h3>Coquinha gelada</h3>
+                <h3>Coquinha gelada3</h3>
                 <p class="">Lata 350ml</p>
                 <p>R$ <span id="valor_bebida3">7,90</span> <img class="checked" id="checked6" src="img/Vector.svg"></p>
             </div><!--caixa-escolha-->
@@ -96,29 +96,77 @@
 
         <div class="container-sessao-comida">
 
-            <div class="caixa-escolha" id="sobre-mesa1" onclick="muda_borda_sobre_mesa1()">
+            <div class="caixa-escolha" id="sobre_mesa1" onclick="muda_borda_sobre_mesa1()">
                 <img src="img/pudim 1.svg">
                 <h3>Pudim</h3>
                 <p class="p2-coquinha">Apenas pudim</p>
                 <p>R$ <span id="valor_sobre_mesa1">7,90</span> <img class="checked" id="checked7" src="img/Vector.svg"></p>
             </div><!--caixa-escolha-->
 
-            <div class="caixa-escolha" id="sobre-mesa2" onclick="muda_borda_sobre_mesa2()">
+            <div class="caixa-escolha" id="sobre_mesa2" onclick="muda_borda_sobre_mesa2()">
                 <img src="img/pudim 1.svg">
-                <h3>Pudim</h3>
+                <h3>Pudim2</h3>
                 <p class="p2-coquinha">Apenas pudim</p>
                 <p>R$ <span id="valor_sobre_mesa2">3,90</span> <img class="checked" id="checked8" src="img/Vector.svg"></p>
             </div><!--caixa-escolha-->
 
-            <div class="caixa-escolha" id="sobre-mesa3" onclick="muda_borda_sobre_mesa3()">
+            <div class="caixa-escolha" id="sobre_mesa3" onclick="muda_borda_sobre_mesa3()">
                 <img src="img/pudim 1.svg">
-                <h3>Pudim</h3>
+                <h3>Pudim3</h3>
                 <p class="">Apenas pudim</p>
                 <p>R$ <span id="valor_sobre_mesa3">2,90</span> <img class="checked" id="checked9" src="img/Vector.svg"></p>
             </div><!--caixa-escolha-->
 
         </div><!--container-sessao-comida-->
     </section><!--sessao-bebida--> 
+
+    <div class="confirmar-pedido esconder">
+        <div class="container-confirmar-pedido">
+            <div class="content">
+                <h3>Confirme seu pedido</h3>
+                <div class="informacoes">
+                    <div class="col1">
+                        <div class="p">
+                            <span>Frango Yin Yang</span>
+                        </div><!--p-->
+    
+                        <div class="b">
+                            <span>Coquinha gelada</span>
+                        </div><!--b-->
+    
+                        <div class="s">
+                            <span>Pudim</span>
+                        </div><!--s-->
+    
+                        <div class="t">
+                            <span>TOTAL</span>
+                            
+                        </div><!--t-->
+                    </div><!--col1-->
+
+                    <div class="col2">
+                        <div class="vp">
+                            <span>14,90</span>
+                        </div><!--p-->
+    
+                        <div class="vb">
+                            <span>4,90</span>
+                        </div><!--b-->
+    
+                        <div class="vs">
+                            <span>7,90</span>
+                        </div><!--s-->
+    
+                        <div class="vt">
+                            <span>R$ 27,70</span>
+                        </div><!--t-->
+                    </div><!--col2-->
+                </div><!--informacoes-->
+                <button class="confirm">Tudo certo, pode pedir!</button>
+                <p class="cancel">Cancelar</p>
+            </div><!--content-->
+        </div><!--container-confirmar-pedido-->
+    </div><!--confirmar-pedido-->
 
     </main>
     <!-------------------------------------------main-------------------------------->
@@ -127,8 +175,10 @@
 
     <footer>
         <button class="btn1" disabled>Selecione os 3 itens para fechar o pedido</button>
-        <button class="btn2">Selecione os 3 itens para fechar o pedido</button>
+        <button class="btn2" onclick="calcular()">fechar pedido</button>
     </footer>
+
+    
 
     <!-------------------------------------------footer-------------------------------->
     <script src="js/script.js"></script>
