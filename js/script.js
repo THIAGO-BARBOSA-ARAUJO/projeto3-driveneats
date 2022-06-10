@@ -12,6 +12,7 @@ let checked9 = document.getElementById("checked9")
 
 let prato, bebida, sobre_mesa
 
+let nome_prato, nome_bebida, nome_sobre_mesa, valor_total
 
 let valor_prato1 = 0
 let valor_prato2 = 0
@@ -48,10 +49,6 @@ function muda_borda_prato1() {
     valor_prato2 = 0
     valor_prato3 = 0
     prato = document.querySelector("#prato1")
-    console.log("prato1: " + valor_prato1)
-    console.log("prato2: " + valor_prato2)
-    console.log("prato3: " + valor_prato3)
-    console.log("*********************************************")
     ativar()
 }
 
@@ -67,10 +64,6 @@ function muda_borda_prato2() {
     valor_prato2 = Number(valor_prato2.replace(",", "."))
     valor_prato3 = 0
     prato = document.querySelector("#prato2")
-    console.log("prato1: " + valor_prato1)
-    console.log("prato2: " + valor_prato2)
-    console.log("prato3: " + valor_prato3)
-    console.log("*********************************************")
     ativar()
 }
 
@@ -86,10 +79,6 @@ function muda_borda_prato3() {
     valor_prato3 = document.querySelector("#valor_prato3").innerText
     valor_prato3 = Number(valor_prato3.replace(",", "."))
     prato = document.querySelector("#prato3")
-    console.log("prato1: " + valor_prato1)
-    console.log("prato2: " + valor_prato2)
-    console.log("prato3: " + valor_prato3)
-    console.log("*********************************************")
     ativar()
 }
 
@@ -108,10 +97,6 @@ function muda_borda_bebida1() {
     valor_bebida2 = 0
     valor_bebida3 = 0
     bebida = document.querySelector("#bebida1")
-    console.log("bebida1: " + valor_bebida1)
-    console.log("bebida2: " + valor_bebida2)
-    console.log("bebida3: " + valor_bebida3)
-    console.log("*********************************************")
     ativar()
 }
 
@@ -127,10 +112,6 @@ function muda_borda_bebida2() {
     valor_bebida2 = Number(valor_bebida2.replace(",", "."))
     valor_bebida3 = 0
     bebida = document.querySelector("#bebida2")
-    console.log("bebida1: " + valor_bebida1)
-    console.log("bebida2: " + valor_bebida2)
-    console.log("bebida3: " + valor_bebida3)
-    console.log("*********************************************")
     ativar()
 }
 
@@ -146,10 +127,6 @@ function muda_borda_bebida3() {
     valor_bebida3 = document.querySelector("#valor_bebida3").innerText
     valor_bebida3 = Number(valor_bebida3.replace(",", "."))
     bebida = document.querySelector("#bebida3")
-    console.log("bebida1: " + valor_bebida1)
-    console.log("bebida2: " + valor_bebida2)
-    console.log("bebida3: " + valor_bebida3)
-    console.log("*********************************************")
     ativar()
 }
 
@@ -167,10 +144,6 @@ function muda_borda_sobre_mesa1() {
     valor_sobre_mesa2 = 0
     valor_sobre_mesa3 = 0
     sobre_mesa = document.querySelector("#sobre_mesa1")
-    console.log("sobre_mesa1: " + valor_sobre_mesa1)
-    console.log("sobre_mesa2: " + valor_sobre_mesa2)
-    console.log("sobre_mesa3: " + valor_sobre_mesa3)
-    console.log("*********************************************")
     ativar()
 }
 
@@ -186,10 +159,6 @@ function muda_borda_sobre_mesa2() {
     valor_sobre_mesa2 = Number(valor_sobre_mesa2.replace(",", "."))
     valor_sobre_mesa3 = 0
     sobre_mesa = document.querySelector("#sobre_mesa2")
-    console.log("sobre_mesa1: " + valor_sobre_mesa1)
-    console.log("sobre_mesa2: " + valor_sobre_mesa2)
-    console.log("sobre_mesa3: " + valor_sobre_mesa3)
-    console.log("*********************************************")
     ativar()
 }
 
@@ -205,10 +174,6 @@ function muda_borda_sobre_mesa3() {
     valor_sobre_mesa3 = document.querySelector("#valor_sobre_mesa3").innerText
     valor_sobre_mesa3 = Number(valor_sobre_mesa3.replace(",", "."))
     sobre_mesa = document.querySelector("#sobre_mesa3")
-    console.log("sobre_mesa1: " + valor_sobre_mesa1)
-    console.log("sobre_mesa2: " + valor_sobre_mesa2)
-    console.log("sobre_mesa3: " + valor_sobre_mesa3)
-    console.log("*********************************************")
     ativar()
 }
 
@@ -220,25 +185,97 @@ function ativar() {
 }
 
 function calcular() {
-    let valor_total = valor_prato1 + valor_prato2 + valor_prato3 + valor_bebida1 + valor_bebida2 + valor_bebida3 + valor_sobre_mesa1 + valor_sobre_mesa2 + valor_sobre_mesa3
+    valor_total = valor_prato1 + valor_prato2 + valor_prato3 + valor_bebida1 + valor_bebida2 + valor_bebida3 + valor_sobre_mesa1 + valor_sobre_mesa2 + valor_sobre_mesa3
     valor_total = valor_total.toFixed(2)
     
-    let nome_prato = prato.querySelector("h3").innerText
+    nome_prato = prato.querySelector("h3").innerText
     
-    let nome_bebida = bebida.querySelector("h3").innerText
+    nome_bebida = bebida.querySelector("h3").innerText
     
-    let nome_sobre_mesa = sobre_mesa.querySelector("h3").innerText
+    nome_sobre_mesa = sobre_mesa.querySelector("h3").innerText
     
+    
+
+    let vfp = prato.querySelector("span").innerText
+    let vfb = bebida.querySelector("span").innerText
+    let vfs = sobre_mesa.querySelector("span").innerText
+
+    let msg_confirma = `
+    <div class="container-confirmar-pedido">
+            <div class="content">
+                <h3>Confirme seu pedido</h3>
+                <div class="informacoes">
+                    <div class="col1">
+                        <div class="p">
+                            <span> ${nome_prato}</span>
+                        </div><!--p-->
+    
+                        <div class="b">
+                            <span>${nome_bebida}</span>
+                        </div><!--b-->
+    
+                        <div class="s">
+                            <span>${nome_sobre_mesa}</span>
+                        </div><!--s-->
+    
+                        <div class="t">
+                            <span>TOTAL</span>
+                            
+                        </div><!--t-->
+                    </div><!--col1-->
+
+                    <div class="col2">
+                        <div class="vp">
+                            <span>${vfp}</span>
+                        </div><!--p-->
+    
+                        <div class="vb">
+                            <span>${vfb}</span>
+                        </div><!--b-->
+    
+                        <div class="vs">
+                            <span>${vfs}</span>
+                        </div><!--s-->
+    
+                        <div class="vt">
+                            <span>R$ ${valor_total}</span>
+                        </div><!--t-->
+                    </div><!--col2-->
+                </div><!--informacoes-->
+                <button class="confirm" onclick="enviar_mensagem()">Tudo certo, pode pedir!</button>
+                <p class="cancel" onclick="fechar_tela_fechar_pedido()">Cancelar</p>
+            </div><!--content-->
+        </div><!--container-confirmar-pedido-->
+    `
+    document.querySelector(".confirmar-pedido").innerHTML = msg_confirma
+
     let tela_confirma = document.querySelector(".confirmar-pedido")
     tela_confirma.classList.remove("esconder")
+
+
     msg = `
 Olá, gostaria de fazer o pedido:
 - Prato: ${nome_prato}
 - Bebida: ${nome_bebida}
 - Sobremesa: ${nome_sobre_mesa}
 Total: R$ ${valor_total}`
-
-    /*msg_encodada = encodeURIComponent(msg)
-    window.open(`https://wa.me/5521966339665?text=${msg_encodada}`)*/
 }
 
+function enviar_mensagem() {
+    msg = `
+Olá, gostaria de fazer o pedido:
+- Prato: ${nome_prato}
+- Bebida: ${nome_bebida}
+- Sobremesa: ${nome_sobre_mesa}
+Total: R$ ${valor_total}`
+    msg_encodada = encodeURIComponent(msg)
+    window.open(`https://wa.me/5521966339665?text=${msg_encodada}`)
+    
+    let tela_confirma = document.querySelector(".confirmar-pedido")
+    tela_confirma.classList.add("esconder")
+}
+
+function fechar_tela_fechar_pedido() {
+    let tela_confirma = document.querySelector(".confirmar-pedido")
+    tela_confirma.classList.add("esconder")
+}

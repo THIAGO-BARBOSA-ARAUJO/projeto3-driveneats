@@ -84,6 +84,12 @@
         border: 5px solid transparent;
     }
 
+    .caixa-escolha > img {
+        width: 144px;
+        height: 87px;
+        border-radius: 5px;
+    }
+
     .borda_dinamica {
         border: 5px solid #32B72F;
     }
@@ -95,7 +101,7 @@
         font-size: 16px;
         line-height: 19px;
         color: #333333;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         margin-top: 8px;
     }
 
@@ -106,7 +112,7 @@
         font-size: 15px;
         line-height: 18px;
         color: #A6A6A6;
-        margin-bottom: 5px;
+        padding: 5px 0;
     }
 
     .caixa-escolha p:last-of-type {
@@ -116,6 +122,7 @@
         font-size: 16px;
         line-height: 19px;
         color: black;
+        
     }
     /**********************************************/
     .checked {
@@ -197,10 +204,6 @@
         border-radius: 9px;
         display: flex;
         justify-content: center;
-    }
-
-    .content {
-        
     }
 
     .container-confirmar-pedido h3 {
