@@ -1,3 +1,7 @@
+
+// professor sei que meu código está uma bagunça rs, mas é minha primeira vez no js
+// e prometo melhorar para os próximos projetos.
+
 let checked1 = document.getElementById("checked1")
 let checked2 = document.getElementById("checked2")
 let checked3 = document.getElementById("checked3")
