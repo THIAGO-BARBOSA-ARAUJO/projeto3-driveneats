@@ -14,6 +14,8 @@ let prato, bebida, sobre_mesa
 
 let nome_prato, nome_bebida, nome_sobre_mesa, valor_total
 
+let nome, endereco
+
 let valor_prato1 = 0
 let valor_prato2 = 0
 let valor_prato3 = 0
@@ -194,7 +196,8 @@ function calcular() {
     
     nome_sobre_mesa = sobre_mesa.querySelector("h3").innerText
     
-    
+    nome = prompt("Digite seu nome!")
+    endereco = prompt("Digite seu endereço!")
 
     let vfp = prato.querySelector("span").innerText
     let vfb = bebida.querySelector("span").innerText
@@ -267,7 +270,11 @@ Olá, gostaria de fazer o pedido:
 - Prato: ${nome_prato}
 - Bebida: ${nome_bebida}
 - Sobremesa: ${nome_sobre_mesa}
-Total: R$ ${valor_total}`
+Total: R$ ${valor_total}
+
+Nome: ${nome}
+endereço: ${endereco}
+`
     msg_encodada = encodeURIComponent(msg)
     window.open(`https://wa.me/5521966339665?text=${msg_encodada}`)
     
